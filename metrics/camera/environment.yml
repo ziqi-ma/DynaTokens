@@ -1,0 +1,23 @@
+# Conda env for running NVIDIA ViPE (Video Pose Engine) as a metric over
+# generated videos. Mirrors vipe/envs/base.yml so the upstream install
+# steps apply as-is.
+#
+# After `conda env create -f environment.yml`, run `setup.sh` (in this dir)
+# to finish the pip installs and compile the CUDA extensions.
+
+name: vipe
+channels:
+  - nvidia/label/cuda-12.8.0
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.10
+  - pip
+  - cuda-nvcc
+  - eigen
+  - zlib
+  - libcusparse-dev
+  - libcublas-dev
+  - libcusolver-dev
+  - pip:
+      - scipy

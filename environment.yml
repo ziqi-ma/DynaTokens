@@ -1,0 +1,44 @@
+# One environment for curation, data preparation, training and inference.
+# (The ViPE camera metric needs its own env: see metrics/camera/setup.sh.)
+#   conda env create -f environment.yml && conda activate dynatoken
+#   pip install flash-attn --no-build-isolation   # optional, faster attention (tested: 2.8.4)
+# Versions below are the ones this release was tested with (CUDA 12.x, A100 80GB).
+name: dynatoken
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - ffmpeg
+  - pip:
+    - --extra-index-url https://download.pytorch.org/whl/cu126
+    - torch==2.7.1
+    - torchvision==0.22.1
+    - diffusers==0.35.1
+    - transformers[accelerate,tiktoken]==4.56.0
+    - accelerate==1.10.1
+    - peft==0.17.1
+    - safetensors==0.4.5
+    - huggingface-hub[cli]==0.35.0
+    - torchdata==0.11.0
+    - einops==0.8.1
+    - loguru==0.7.3
+    - omegaconf==2.3.0
+    - numpy==1.26.4
+    - scipy==1.15.1
+    - pandas==2.3.2
+    - pillow==12.0.0
+    - imageio==2.37.0
+    - imageio-ffmpeg==0.6.0
+    - opencv-python-headless==4.11.0.86
+    - moviepy==1.0.3
+    - matplotlib==3.9.0
+    - wandb==0.22.0
+    - tqdm==4.67.1
+    - openai==2.8.0          # imported by the HY-WorldPlay prompt-rewrite utilities
+    - protobuf
+    - ninja
+    # curation API stages (Gemini / Veo, Kling via fal.ai)
+    - google-genai==1.73.1
+    - fal-client==0.13.2
+    - requests

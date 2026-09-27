@@ -1,0 +1,9 @@
+[submodule "third_party/VBench"]
+	path = third_party/VBench
+	url = https://github.com/Vchitect/VBench.git
+[submodule "third_party/WorldScore"]
+	path = third_party/WorldScore
+	url = https://github.com/haoyi-duan/WorldScore.git
+[submodule "third_party/vipe"]
+	path = third_party/vipe
+	url = https://github.com/nv-tlabs/vipe.git
