@@ -42,3 +42,4 @@ dependencies:
     - google-genai==1.73.1
     - fal-client==0.13.2
     - requests
+    - pytest==8.4.2
