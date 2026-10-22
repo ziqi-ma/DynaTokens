@@ -30,6 +30,25 @@ cd DynaTokens
 conda env create -f environment.yml
 conda activate dynatoken
 ```
+For a repeatable developer setup, use the included script or Makefile. Both are
+idempotent and keep the environment name configurable:
+```
+bash scripts/setup_dev.sh
+# or
+make setup
+```
+Install optional FlashAttention with `make setup-flash-attn`. Initialize all
+submodules with `make submodules`, and download the model checkpoints with:
+```
+HF_TOKEN=[HuggingFace token] make models
+```
+Run `make help` for shortcuts for data preparation, training, inference, and
+metric setup. Commands that need scene-specific values accept the same
+environment variables as the scripts; for example:
+```
+make train DATA_BASE=outputs/training_data/[scene]
+make infer CKPT=checkpoints/vbench_sweep
+```
 Optionally install FlashAttention
 ```
 pip install flash-attn --no-build-isolation
