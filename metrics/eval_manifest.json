@@ -1,0 +1,878 @@
+{
+  "issue": "https://github.com/ziqi-ma/DynaTokens/issues/3",
+  "paper": "https://arxiv.org/abs/2609.35704",
+  "benchmarks": {
+    "vbench2": {
+      "paper_target_scenes": 20,
+      "trajectories_per_scene": 6,
+      "scenes": [
+        {
+          "id": "vbench_bird",
+          "benchmark": "vbench2",
+          "prompt": "A bird is behind a apple, then the bird flies to the right of the apple.\n",
+          "prompt_status": "released",
+          "prompt_source": "s3://dynatokens/dynatokens_checkpoints/vbench_bird/prompt.txt",
+          "prompt_file": "metrics/eval_poses/vbench_bird/prompt.txt",
+          "prompt_sha256": "4a5133fb8c735db5553fa69cb8f41e70597f5808905c081076058dbed34c174a",
+          "init_image": "s3://dynatokens/dynatokens_checkpoints/vbench_bird/init_image.png",
+          "init_image_note": "Not vendored; retrieve from the released checkpoint folder.",
+          "checkpoint": "s3://dynatokens/dynatokens_checkpoints/vbench_bird/diffusion_pytorch_model.safetensors",
+          "checkpoint_note": "not vendored, ~962 MB",
+          "trajectories": [
+            {
+              "name": "right7up8",
+              "pose_json": "metrics/eval_poses/vbench_bird/right7up8/pose.json",
+              "sha256": "450f77275b12d3edd8fbacd34a7217ffc964e32bcd206d7800713824a6148819",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_bird/sample_poses/right7up8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "right-7,up-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            },
+            {
+              "name": "up7left8",
+              "pose_json": "metrics/eval_poses/vbench_bird/up7left8/pose.json",
+              "sha256": "cd36b276027d15443513e9114ab9c368ca4b541dbf295824c3233f027b67f92e",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_bird/sample_poses/up7left8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "up-7,left-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            },
+            {
+              "name": "w7left8",
+              "pose_json": "metrics/eval_poses/vbench_bird/w7left8/pose.json",
+              "sha256": "cd8da9369114cc9ba9d14586a8385d762685b26bae4f54d7f903c789e4f7e78f",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_bird/sample_poses/w7left8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "w-7,left-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            }
+          ]
+        },
+        {
+          "id": "vbench_cat",
+          "benchmark": "vbench2",
+          "prompt": "A cat is playing with a toy, then it suddenly jumps onto a shelf.\n",
+          "prompt_status": "released",
+          "prompt_source": "s3://dynatokens/dynatokens_checkpoints/vbench_cat/prompt.txt",
+          "prompt_file": "metrics/eval_poses/vbench_cat/prompt.txt",
+          "prompt_sha256": "85c7a3d1efbfdc4bc7bf84e45163557d9f6a2ea7a171182680f48d3bb53b4140",
+          "init_image": "s3://dynatokens/dynatokens_checkpoints/vbench_cat/init_image.png",
+          "init_image_note": "Not vendored; retrieve from the released checkpoint folder.",
+          "checkpoint": "s3://dynatokens/dynatokens_checkpoints/vbench_cat/diffusion_pytorch_model.safetensors",
+          "checkpoint_note": "not vendored, ~962 MB",
+          "trajectories": [
+            {
+              "name": "up7right8",
+              "pose_json": "metrics/eval_poses/vbench_cat/up7right8/pose.json",
+              "sha256": "6d3dffb599f8b4b55ef95a90cba17c1b7a44ef263662815be43a16f94b88eb75",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_cat/sample_poses/up7right8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "up-7,right-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            },
+            {
+              "name": "w7left8",
+              "pose_json": "metrics/eval_poses/vbench_cat/w7left8/pose.json",
+              "sha256": "cd8da9369114cc9ba9d14586a8385d762685b26bae4f54d7f903c789e4f7e78f",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_cat/sample_poses/w7left8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "w-7,left-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            },
+            {
+              "name": "w7right8",
+              "pose_json": "metrics/eval_poses/vbench_cat/w7right8/pose.json",
+              "sha256": "971d7613baf5edacc2a9c6e96ba03e68f817d814dffc4266f4887eecc18afb92",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_cat/sample_poses/w7right8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "w-7,right-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            }
+          ]
+        },
+        {
+          "id": "vbench_chair",
+          "benchmark": "vbench2",
+          "prompt": "A person is sitting in a chair, then they suddenly get up and start stretching.\n",
+          "prompt_status": "released",
+          "prompt_source": "s3://dynatokens/dynatokens_checkpoints/vbench_chair/prompt.txt",
+          "prompt_file": "metrics/eval_poses/vbench_chair/prompt.txt",
+          "prompt_sha256": "b9522c14477d9b8249dca1f96fa814e0d86c16ede91064a5006704c1d66b4454",
+          "init_image": "s3://dynatokens/dynatokens_checkpoints/vbench_chair/init_image.png",
+          "init_image_note": "Not vendored; retrieve from the released checkpoint folder.",
+          "checkpoint": "s3://dynatokens/dynatokens_checkpoints/vbench_chair/diffusion_pytorch_model.safetensors",
+          "checkpoint_note": "not vendored, ~962 MB",
+          "trajectories": [
+            {
+              "name": "right7up8",
+              "pose_json": "metrics/eval_poses/vbench_chair/right7up8/pose.json",
+              "sha256": "450f77275b12d3edd8fbacd34a7217ffc964e32bcd206d7800713824a6148819",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_chair/sample_poses/right7up8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "right-7,up-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            },
+            {
+              "name": "s7w8",
+              "pose_json": "metrics/eval_poses/vbench_chair/s7w8/pose.json",
+              "sha256": "ec15f2dc240be216f89b8f9539b873cad3f57b0f53c455cdd52c67c24acab29d",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_chair/sample_poses/s7w8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "s-7,w-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            },
+            {
+              "name": "w7left8",
+              "pose_json": "metrics/eval_poses/vbench_chair/w7left8/pose.json",
+              "sha256": "cd8da9369114cc9ba9d14586a8385d762685b26bae4f54d7f903c789e4f7e78f",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_chair/sample_poses/w7left8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "w-7,left-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            }
+          ]
+        },
+        {
+          "id": "vbench_fox",
+          "benchmark": "vbench2",
+          "prompt": "A fox is on the right of a shoe, then the fox runs to the behind of the shoe.\n",
+          "prompt_status": "released",
+          "prompt_source": "s3://dynatokens/dynatokens_checkpoints/vbench_fox/prompt.txt",
+          "prompt_file": "metrics/eval_poses/vbench_fox/prompt.txt",
+          "prompt_sha256": "f4de291b3bf6be2eb1ec6befb413a6786626cf6407fc65ce4271529efdd3562c",
+          "init_image": "s3://dynatokens/dynatokens_checkpoints/vbench_fox/init_image.png",
+          "init_image_note": "Not vendored; retrieve from the released checkpoint folder.",
+          "checkpoint": "s3://dynatokens/dynatokens_checkpoints/vbench_fox/diffusion_pytorch_model.safetensors",
+          "checkpoint_note": "not vendored, ~962 MB",
+          "trajectories": [
+            {
+              "name": "down7left8",
+              "pose_json": "metrics/eval_poses/vbench_fox/down7left8/pose.json",
+              "sha256": "a8ee3279f8b4ce407ef75d988ae5b5f6e3dcae7e7f7e9966f86be58562d60982",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_fox/sample_poses/down7left8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "down-7,left-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            },
+            {
+              "name": "s7w8",
+              "pose_json": "metrics/eval_poses/vbench_fox/s7w8/pose.json",
+              "sha256": "ec15f2dc240be216f89b8f9539b873cad3f57b0f53c455cdd52c67c24acab29d",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_fox/sample_poses/s7w8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "s-7,w-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            },
+            {
+              "name": "w7right8",
+              "pose_json": "metrics/eval_poses/vbench_fox/w7right8/pose.json",
+              "sha256": "971d7613baf5edacc2a9c6e96ba03e68f817d814dffc4266f4887eecc18afb92",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_fox/sample_poses/w7right8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "w-7,right-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            }
+          ]
+        },
+        {
+          "id": "vbench_kangaroo",
+          "benchmark": "vbench2",
+          "prompt": "A kangaroo is on the left of a small box, then the kangaroo jumps to the right of the box.\n",
+          "prompt_status": "released",
+          "prompt_source": "s3://dynatokens/dynatokens_checkpoints/vbench_kangaroo/prompt.txt",
+          "prompt_file": "metrics/eval_poses/vbench_kangaroo/prompt.txt",
+          "prompt_sha256": "9d47703247a15040f18907806f219abb4af3c9569cff132ca59e513e96c187cc",
+          "init_image": "s3://dynatokens/dynatokens_checkpoints/vbench_kangaroo/init_image.png",
+          "init_image_note": "Not vendored; retrieve from the released checkpoint folder.",
+          "checkpoint": "s3://dynatokens/dynatokens_checkpoints/vbench_kangaroo/diffusion_pytorch_model.safetensors",
+          "checkpoint_note": "not vendored, ~962 MB",
+          "trajectories": [
+            {
+              "name": "right7up8",
+              "pose_json": "metrics/eval_poses/vbench_kangaroo/right7up8/pose.json",
+              "sha256": "450f77275b12d3edd8fbacd34a7217ffc964e32bcd206d7800713824a6148819",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_kangaroo/sample_poses/right7up8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "right-7,up-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            },
+            {
+              "name": "s7w8",
+              "pose_json": "metrics/eval_poses/vbench_kangaroo/s7w8/pose.json",
+              "sha256": "ec15f2dc240be216f89b8f9539b873cad3f57b0f53c455cdd52c67c24acab29d",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_kangaroo/sample_poses/s7w8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "s-7,w-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            },
+            {
+              "name": "w7left8",
+              "pose_json": "metrics/eval_poses/vbench_kangaroo/w7left8/pose.json",
+              "sha256": "cd8da9369114cc9ba9d14586a8385d762685b26bae4f54d7f903c789e4f7e78f",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_kangaroo/sample_poses/w7left8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "w-7,left-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            }
+          ]
+        },
+        {
+          "id": "vbench_sweep",
+          "benchmark": "vbench2",
+          "prompt": "A person is sitting on the couch, then suddenly they get up and start sweeping the floor.\n",
+          "prompt_status": "released",
+          "prompt_source": "s3://dynatokens/dynatokens_checkpoints/vbench_sweep/prompt.txt",
+          "prompt_file": "metrics/eval_poses/vbench_sweep/prompt.txt",
+          "prompt_sha256": "691b6bbc0605e2de1a257bbf08fde4e65520ffeb48fceb584c352a45bb93fb46",
+          "init_image": "s3://dynatokens/dynatokens_checkpoints/vbench_sweep/init_image.png",
+          "init_image_note": "Not vendored; retrieve from the released checkpoint folder.",
+          "checkpoint": "s3://dynatokens/dynatokens_checkpoints/vbench_sweep/diffusion_pytorch_model.safetensors",
+          "checkpoint_note": "not vendored, ~962 MB",
+          "trajectories": [
+            {
+              "name": "right7up8",
+              "pose_json": "metrics/eval_poses/vbench_sweep/right7up8/pose.json",
+              "sha256": "450f77275b12d3edd8fbacd34a7217ffc964e32bcd206d7800713824a6148819",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_sweep/sample_poses/right7up8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "right-7,up-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            },
+            {
+              "name": "s7w8",
+              "pose_json": "metrics/eval_poses/vbench_sweep/s7w8/pose.json",
+              "sha256": "ec15f2dc240be216f89b8f9539b873cad3f57b0f53c455cdd52c67c24acab29d",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_sweep/sample_poses/s7w8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "s-7,w-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            },
+            {
+              "name": "w7right8",
+              "pose_json": "metrics/eval_poses/vbench_sweep/w7right8/pose.json",
+              "sha256": "971d7613baf5edacc2a9c6e96ba03e68f817d814dffc4266f4887eecc18afb92",
+              "source": "s3://dynatokens/dynatokens_checkpoints/vbench_sweep/sample_poses/w7right8/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "pose_string": "w-7,right-8",
+              "pose_string_note": "Inferred from folder name and numerically reproduced against this released pose; not supplied as a pose string by the release."
+            }
+          ],
+          "note": "The released prompt is distinct from the other five VBench2 prompts; this is counted as a sixth scene."
+        }
+      ],
+      "pending_maintainer_confirmation": 14,
+      "note": "The paper reports six evaluation trajectories per scene, but each released VBench2 checkpoint contains three sample poses. Their seen/unseen split and correspondence to the paper evaluation require confirmation."
+    },
+    "worldscore": {
+      "paper_target_scenes": 15,
+      "trajectories_per_scene": 6,
+      "scenes": [
+        {
+          "id": "worldscore_boat_gently",
+          "benchmark": "worldscore",
+          "prompt": null,
+          "prompt_status": "not_released_empty_prompt_txt",
+          "prompt_source": "s3://dynatokens/dynatokens_checkpoints/worldscore_boat_gently/prompt.txt",
+          "prompt_file": "metrics/eval_poses/worldscore_boat_gently/prompt.txt",
+          "prompt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "init_image": "s3://dynatokens/dynatokens_checkpoints/worldscore_boat_gently/init_image.png",
+          "init_image_note": "Not vendored; retrieve from the released checkpoint folder.",
+          "checkpoint": "s3://dynatokens/dynatokens_checkpoints/worldscore_boat_gently/diffusion_pytorch_model.safetensors",
+          "checkpoint_note": "not vendored, ~962 MB",
+          "trajectories": [
+            {
+              "name": "a_w",
+              "pose_json": "metrics/eval_poses/worldscore_boat_gently/a_w/pose.json",
+              "sha256": "c3e478674e7a7b3e14d541c0d8f3f378e1cbd8766a2ddf64fd8c0df938479eb7",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_boat_gently/sample_poses/a_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "note": "The released intrinsic matrix uses pixel-scale values, unlike the normalized intrinsics in the same-named samples for the other WorldScore scenes; preserved verbatim. Confirm intended usage with maintainers."
+            },
+            {
+              "name": "d_w",
+              "pose_json": "metrics/eval_poses/worldscore_boat_gently/d_w/pose.json",
+              "sha256": "4569f460de1085be29e84da6327a1b55d26681a956612e6f1ff5237c0ea2b5eb",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_boat_gently/sample_poses/d_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "down_right",
+              "pose_json": "metrics/eval_poses/worldscore_boat_gently/down_right/pose.json",
+              "sha256": "625e55a613020ed43d89315dd728f6cab7a897faaafb7d68cba6e3763f156396",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_boat_gently/sample_poses/down_right/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "note": "The released intrinsic matrix uses pixel-scale values, unlike the normalized intrinsics in the same-named samples for the other WorldScore scenes; preserved verbatim. Confirm intended usage with maintainers."
+            },
+            {
+              "name": "down_w",
+              "pose_json": "metrics/eval_poses/worldscore_boat_gently/down_w/pose.json",
+              "sha256": "06d657282af118cafc7436e898ab832eb63d6612f36f5027ecb264d4e199a745",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_boat_gently/sample_poses/down_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "left_w",
+              "pose_json": "metrics/eval_poses/worldscore_boat_gently/left_w/pose.json",
+              "sha256": "2512ed64d47ebdbe91a677b17fca2c33ff51db4c95e24b383e008db75ae5e3c3",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_boat_gently/sample_poses/left_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "note": "The released intrinsic matrix uses pixel-scale values, unlike the normalized intrinsics in the same-named samples for the other WorldScore scenes; preserved verbatim. Confirm intended usage with maintainers."
+            },
+            {
+              "name": "right_up",
+              "pose_json": "metrics/eval_poses/worldscore_boat_gently/right_up/pose.json",
+              "sha256": "450f77275b12d3edd8fbacd34a7217ffc964e32bcd206d7800713824a6148819",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_boat_gently/sample_poses/right_up/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            }
+          ],
+          "prompt_note": "The released prompt.txt is empty; obtain the prompt from the WorldScore benchmark entry or maintainer confirmation."
+        },
+        {
+          "id": "worldscore_bus_moves",
+          "benchmark": "worldscore",
+          "prompt": null,
+          "prompt_status": "not_released_empty_prompt_txt",
+          "prompt_source": "s3://dynatokens/dynatokens_checkpoints/worldscore_bus_moves/prompt.txt",
+          "prompt_file": "metrics/eval_poses/worldscore_bus_moves/prompt.txt",
+          "prompt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "init_image": "s3://dynatokens/dynatokens_checkpoints/worldscore_bus_moves/init_image.png",
+          "init_image_note": "Not vendored; retrieve from the released checkpoint folder.",
+          "checkpoint": "s3://dynatokens/dynatokens_checkpoints/worldscore_bus_moves/diffusion_pytorch_model.safetensors",
+          "checkpoint_note": "not vendored, ~962 MB",
+          "trajectories": [
+            {
+              "name": "a_w",
+              "pose_json": "metrics/eval_poses/worldscore_bus_moves/a_w/pose.json",
+              "sha256": "c3e478674e7a7b3e14d541c0d8f3f378e1cbd8766a2ddf64fd8c0df938479eb7",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_bus_moves/sample_poses/a_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "note": "The released intrinsic matrix uses pixel-scale values, unlike the normalized intrinsics in the same-named samples for the other WorldScore scenes; preserved verbatim. Confirm intended usage with maintainers."
+            },
+            {
+              "name": "d_w",
+              "pose_json": "metrics/eval_poses/worldscore_bus_moves/d_w/pose.json",
+              "sha256": "4569f460de1085be29e84da6327a1b55d26681a956612e6f1ff5237c0ea2b5eb",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_bus_moves/sample_poses/d_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "down_right",
+              "pose_json": "metrics/eval_poses/worldscore_bus_moves/down_right/pose.json",
+              "sha256": "625e55a613020ed43d89315dd728f6cab7a897faaafb7d68cba6e3763f156396",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_bus_moves/sample_poses/down_right/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "note": "The released intrinsic matrix uses pixel-scale values, unlike the normalized intrinsics in the same-named samples for the other WorldScore scenes; preserved verbatim. Confirm intended usage with maintainers."
+            },
+            {
+              "name": "down_w",
+              "pose_json": "metrics/eval_poses/worldscore_bus_moves/down_w/pose.json",
+              "sha256": "06d657282af118cafc7436e898ab832eb63d6612f36f5027ecb264d4e199a745",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_bus_moves/sample_poses/down_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "left_w",
+              "pose_json": "metrics/eval_poses/worldscore_bus_moves/left_w/pose.json",
+              "sha256": "2512ed64d47ebdbe91a677b17fca2c33ff51db4c95e24b383e008db75ae5e3c3",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_bus_moves/sample_poses/left_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16,
+              "note": "The released intrinsic matrix uses pixel-scale values, unlike the normalized intrinsics in the same-named samples for the other WorldScore scenes; preserved verbatim. Confirm intended usage with maintainers."
+            },
+            {
+              "name": "right_up",
+              "pose_json": "metrics/eval_poses/worldscore_bus_moves/right_up/pose.json",
+              "sha256": "450f77275b12d3edd8fbacd34a7217ffc964e32bcd206d7800713824a6148819",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_bus_moves/sample_poses/right_up/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            }
+          ],
+          "prompt_note": "The released prompt.txt is empty; obtain the prompt from the WorldScore benchmark entry or maintainer confirmation."
+        },
+        {
+          "id": "worldscore_rocket_ignites",
+          "benchmark": "worldscore",
+          "prompt": null,
+          "prompt_status": "not_released_empty_prompt_txt",
+          "prompt_source": "s3://dynatokens/dynatokens_checkpoints/worldscore_rocket_ignites/prompt.txt",
+          "prompt_file": "metrics/eval_poses/worldscore_rocket_ignites/prompt.txt",
+          "prompt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "init_image": "s3://dynatokens/dynatokens_checkpoints/worldscore_rocket_ignites/init_image.png",
+          "init_image_note": "Not vendored; retrieve from the released checkpoint folder.",
+          "checkpoint": "s3://dynatokens/dynatokens_checkpoints/worldscore_rocket_ignites/diffusion_pytorch_model.safetensors",
+          "checkpoint_note": "not vendored, ~962 MB",
+          "trajectories": [
+            {
+              "name": "a_w",
+              "pose_json": "metrics/eval_poses/worldscore_rocket_ignites/a_w/pose.json",
+              "sha256": "80a4c016308396a635a12d6227ae7a3879a5af9c9d2a84878de6d61190ed8598",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_rocket_ignites/sample_poses/a_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "d_w",
+              "pose_json": "metrics/eval_poses/worldscore_rocket_ignites/d_w/pose.json",
+              "sha256": "4569f460de1085be29e84da6327a1b55d26681a956612e6f1ff5237c0ea2b5eb",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_rocket_ignites/sample_poses/d_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "down_right",
+              "pose_json": "metrics/eval_poses/worldscore_rocket_ignites/down_right/pose.json",
+              "sha256": "1b26bf7b2199aa249f838027711b0b1afdd0f6d930e25ebed7bf544dc9e43195",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_rocket_ignites/sample_poses/down_right/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "down_w",
+              "pose_json": "metrics/eval_poses/worldscore_rocket_ignites/down_w/pose.json",
+              "sha256": "06d657282af118cafc7436e898ab832eb63d6612f36f5027ecb264d4e199a745",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_rocket_ignites/sample_poses/down_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "left_w",
+              "pose_json": "metrics/eval_poses/worldscore_rocket_ignites/left_w/pose.json",
+              "sha256": "a886c9ab10e6bd42db9959b83d23b5a07c1ee70acc0cb0906cba5430e64a2239",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_rocket_ignites/sample_poses/left_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "right_up",
+              "pose_json": "metrics/eval_poses/worldscore_rocket_ignites/right_up/pose.json",
+              "sha256": "450f77275b12d3edd8fbacd34a7217ffc964e32bcd206d7800713824a6148819",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_rocket_ignites/sample_poses/right_up/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            }
+          ],
+          "prompt_note": "The released prompt.txt is empty; obtain the prompt from the WorldScore benchmark entry or maintainer confirmation."
+        },
+        {
+          "id": "worldscore_train_moves",
+          "benchmark": "worldscore",
+          "prompt": null,
+          "prompt_status": "not_released_empty_prompt_txt",
+          "prompt_source": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_moves/prompt.txt",
+          "prompt_file": "metrics/eval_poses/worldscore_train_moves/prompt.txt",
+          "prompt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "init_image": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_moves/init_image.png",
+          "init_image_note": "Not vendored; retrieve from the released checkpoint folder.",
+          "checkpoint": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_moves/diffusion_pytorch_model.safetensors",
+          "checkpoint_note": "not vendored, ~962 MB",
+          "trajectories": [
+            {
+              "name": "a_w",
+              "pose_json": "metrics/eval_poses/worldscore_train_moves/a_w/pose.json",
+              "sha256": "80a4c016308396a635a12d6227ae7a3879a5af9c9d2a84878de6d61190ed8598",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_moves/sample_poses/a_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "d_w",
+              "pose_json": "metrics/eval_poses/worldscore_train_moves/d_w/pose.json",
+              "sha256": "4569f460de1085be29e84da6327a1b55d26681a956612e6f1ff5237c0ea2b5eb",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_moves/sample_poses/d_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "down_right",
+              "pose_json": "metrics/eval_poses/worldscore_train_moves/down_right/pose.json",
+              "sha256": "1b26bf7b2199aa249f838027711b0b1afdd0f6d930e25ebed7bf544dc9e43195",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_moves/sample_poses/down_right/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "down_w",
+              "pose_json": "metrics/eval_poses/worldscore_train_moves/down_w/pose.json",
+              "sha256": "06d657282af118cafc7436e898ab832eb63d6612f36f5027ecb264d4e199a745",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_moves/sample_poses/down_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "left_w",
+              "pose_json": "metrics/eval_poses/worldscore_train_moves/left_w/pose.json",
+              "sha256": "a886c9ab10e6bd42db9959b83d23b5a07c1ee70acc0cb0906cba5430e64a2239",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_moves/sample_poses/left_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "right_up",
+              "pose_json": "metrics/eval_poses/worldscore_train_moves/right_up/pose.json",
+              "sha256": "450f77275b12d3edd8fbacd34a7217ffc964e32bcd206d7800713824a6148819",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_moves/sample_poses/right_up/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            }
+          ],
+          "prompt_note": "The released prompt.txt is empty; obtain the prompt from the WorldScore benchmark entry or maintainer confirmation."
+        },
+        {
+          "id": "worldscore_train_smoothly",
+          "benchmark": "worldscore",
+          "prompt": null,
+          "prompt_status": "not_released_empty_prompt_txt",
+          "prompt_source": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_smoothly/prompt.txt",
+          "prompt_file": "metrics/eval_poses/worldscore_train_smoothly/prompt.txt",
+          "prompt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "init_image": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_smoothly/init_image.png",
+          "init_image_note": "Not vendored; retrieve from the released checkpoint folder.",
+          "checkpoint": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_smoothly/diffusion_pytorch_model.safetensors",
+          "checkpoint_note": "not vendored, ~962 MB",
+          "trajectories": [
+            {
+              "name": "a_w",
+              "pose_json": "metrics/eval_poses/worldscore_train_smoothly/a_w/pose.json",
+              "sha256": "80a4c016308396a635a12d6227ae7a3879a5af9c9d2a84878de6d61190ed8598",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_smoothly/sample_poses/a_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "d_w",
+              "pose_json": "metrics/eval_poses/worldscore_train_smoothly/d_w/pose.json",
+              "sha256": "4569f460de1085be29e84da6327a1b55d26681a956612e6f1ff5237c0ea2b5eb",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_smoothly/sample_poses/d_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "down_right",
+              "pose_json": "metrics/eval_poses/worldscore_train_smoothly/down_right/pose.json",
+              "sha256": "1b26bf7b2199aa249f838027711b0b1afdd0f6d930e25ebed7bf544dc9e43195",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_smoothly/sample_poses/down_right/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "down_w",
+              "pose_json": "metrics/eval_poses/worldscore_train_smoothly/down_w/pose.json",
+              "sha256": "06d657282af118cafc7436e898ab832eb63d6612f36f5027ecb264d4e199a745",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_smoothly/sample_poses/down_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "left_w",
+              "pose_json": "metrics/eval_poses/worldscore_train_smoothly/left_w/pose.json",
+              "sha256": "a886c9ab10e6bd42db9959b83d23b5a07c1ee70acc0cb0906cba5430e64a2239",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_smoothly/sample_poses/left_w/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            },
+            {
+              "name": "right_up",
+              "pose_json": "metrics/eval_poses/worldscore_train_smoothly/right_up/pose.json",
+              "sha256": "450f77275b12d3edd8fbacd34a7217ffc964e32bcd206d7800713824a6148819",
+              "source": "s3://dynatokens/dynatokens_checkpoints/worldscore_train_smoothly/sample_poses/right_up/pose.json",
+              "split": "unknown",
+              "frame_count": 16
+            }
+          ],
+          "prompt_note": "The released prompt.txt is empty; obtain the prompt from the WorldScore benchmark entry or maintainer confirmation."
+        }
+      ],
+      "pending_maintainer_confirmation": 10,
+      "note": "Released checkpoint folders each contain six sample poses; their seen/unseen split and correspondence to the paper evaluation require confirmation. The boat and bus a_w, down_right, and left_w samples contain pixel-scale intrinsics; the same-named samples in the other three WorldScore scenes use normalized intrinsics. All are preserved as released."
+    }
+  },
+  "additional_released_scenes": {
+    "benchmark": "physicsiq",
+    "scope": "Qualitative-only Physics-IQ scenes (paper section 4.4); not part of the 20 VBench2 or 15 WorldScore evaluation scenes.",
+    "scenes": [
+      {
+        "id": "physicsiq_liquid_duck",
+        "benchmark": "physicsiq",
+        "prompt": null,
+        "prompt_status": "not_released_empty_prompt_txt",
+        "prompt_source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_liquid_duck/prompt.txt",
+        "prompt_file": "metrics/eval_poses/physicsiq_liquid_duck/prompt.txt",
+        "prompt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "init_image": "s3://dynatokens/dynatokens_checkpoints/physicsiq_liquid_duck/init_image.png",
+        "init_image_note": "Not vendored; retrieve from the released checkpoint folder.",
+        "checkpoint": "s3://dynatokens/dynatokens_checkpoints/physicsiq_liquid_duck/diffusion_pytorch_model.safetensors",
+        "checkpoint_note": "not vendored, ~962 MB",
+        "trajectories": [
+          {
+            "name": "a_d",
+            "pose_json": "metrics/eval_poses/physicsiq_liquid_duck/a_d/pose.json",
+            "sha256": "d032703c553ad84fbb72f7d577d7aa5e1119c6be5ae571f624f4f71a02804f9a",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_liquid_duck/sample_poses/a_d/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "a_s",
+            "pose_json": "metrics/eval_poses/physicsiq_liquid_duck/a_s/pose.json",
+            "sha256": "b0c0ab9e2c537c93b2d432ba1eef7af813bd111b7830d7cab60a27941a5105c2",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_liquid_duck/sample_poses/a_s/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "a_w",
+            "pose_json": "metrics/eval_poses/physicsiq_liquid_duck/a_w/pose.json",
+            "sha256": "daeb3f0d17c014776ebb977d6c6c9719100173bdcf8a576361ca76dd5a923c6c",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_liquid_duck/sample_poses/a_w/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "d2",
+            "pose_json": "metrics/eval_poses/physicsiq_liquid_duck/d2/pose.json",
+            "sha256": "da40f1faadbbb4d58058055202d142e8094c5bf279b6d846638b1769735d7936",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_liquid_duck/sample_poses/d2/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "d_a",
+            "pose_json": "metrics/eval_poses/physicsiq_liquid_duck/d_a/pose.json",
+            "sha256": "0f28e240177f2862b061fba55bbf486cb2faf9796b40f790ba7a662734d4a35e",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_liquid_duck/sample_poses/d_a/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "d_w",
+            "pose_json": "metrics/eval_poses/physicsiq_liquid_duck/d_w/pose.json",
+            "sha256": "4569f460de1085be29e84da6327a1b55d26681a956612e6f1ff5237c0ea2b5eb",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_liquid_duck/sample_poses/d_w/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "s2",
+            "pose_json": "metrics/eval_poses/physicsiq_liquid_duck/s2/pose.json",
+            "sha256": "d9242d00f46bcd183799f90d94f255a35c760020c822d7d1736fd004a45aa104",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_liquid_duck/sample_poses/s2/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "up_left",
+            "pose_json": "metrics/eval_poses/physicsiq_liquid_duck/up_left/pose.json",
+            "sha256": "cd36b276027d15443513e9114ab9c368ca4b541dbf295824c3233f027b67f92e",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_liquid_duck/sample_poses/up_left/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          }
+        ],
+        "prompt_note": "The released prompt.txt is empty; obtain the prompt from the Physics-IQ benchmark entry or maintainer confirmation."
+      },
+      {
+        "id": "physicsiq_teapot_rotates",
+        "benchmark": "physicsiq",
+        "prompt": null,
+        "prompt_status": "not_released_empty_prompt_txt",
+        "prompt_source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_teapot_rotates/prompt.txt",
+        "prompt_file": "metrics/eval_poses/physicsiq_teapot_rotates/prompt.txt",
+        "prompt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "init_image": "s3://dynatokens/dynatokens_checkpoints/physicsiq_teapot_rotates/init_image.png",
+        "init_image_note": "Not vendored; retrieve from the released checkpoint folder.",
+        "checkpoint": "s3://dynatokens/dynatokens_checkpoints/physicsiq_teapot_rotates/diffusion_pytorch_model.safetensors",
+        "checkpoint_note": "not vendored, ~962 MB",
+        "trajectories": [
+          {
+            "name": "a_d",
+            "pose_json": "metrics/eval_poses/physicsiq_teapot_rotates/a_d/pose.json",
+            "sha256": "d032703c553ad84fbb72f7d577d7aa5e1119c6be5ae571f624f4f71a02804f9a",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_teapot_rotates/sample_poses/a_d/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "a_s",
+            "pose_json": "metrics/eval_poses/physicsiq_teapot_rotates/a_s/pose.json",
+            "sha256": "b0c0ab9e2c537c93b2d432ba1eef7af813bd111b7830d7cab60a27941a5105c2",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_teapot_rotates/sample_poses/a_s/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "a_w",
+            "pose_json": "metrics/eval_poses/physicsiq_teapot_rotates/a_w/pose.json",
+            "sha256": "daeb3f0d17c014776ebb977d6c6c9719100173bdcf8a576361ca76dd5a923c6c",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_teapot_rotates/sample_poses/a_w/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "d2",
+            "pose_json": "metrics/eval_poses/physicsiq_teapot_rotates/d2/pose.json",
+            "sha256": "da40f1faadbbb4d58058055202d142e8094c5bf279b6d846638b1769735d7936",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_teapot_rotates/sample_poses/d2/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "d_a",
+            "pose_json": "metrics/eval_poses/physicsiq_teapot_rotates/d_a/pose.json",
+            "sha256": "0f28e240177f2862b061fba55bbf486cb2faf9796b40f790ba7a662734d4a35e",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_teapot_rotates/sample_poses/d_a/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "d_w",
+            "pose_json": "metrics/eval_poses/physicsiq_teapot_rotates/d_w/pose.json",
+            "sha256": "4569f460de1085be29e84da6327a1b55d26681a956612e6f1ff5237c0ea2b5eb",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_teapot_rotates/sample_poses/d_w/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "s2",
+            "pose_json": "metrics/eval_poses/physicsiq_teapot_rotates/s2/pose.json",
+            "sha256": "d9242d00f46bcd183799f90d94f255a35c760020c822d7d1736fd004a45aa104",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_teapot_rotates/sample_poses/s2/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "up_left",
+            "pose_json": "metrics/eval_poses/physicsiq_teapot_rotates/up_left/pose.json",
+            "sha256": "cd36b276027d15443513e9114ab9c368ca4b541dbf295824c3233f027b67f92e",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_teapot_rotates/sample_poses/up_left/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          }
+        ],
+        "prompt_note": "The released prompt.txt is empty; obtain the prompt from the Physics-IQ benchmark entry or maintainer confirmation."
+      },
+      {
+        "id": "physicsiq_weight_pillow",
+        "benchmark": "physicsiq",
+        "prompt": null,
+        "prompt_status": "not_released_empty_prompt_txt",
+        "prompt_source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_weight_pillow/prompt.txt",
+        "prompt_file": "metrics/eval_poses/physicsiq_weight_pillow/prompt.txt",
+        "prompt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "init_image": "s3://dynatokens/dynatokens_checkpoints/physicsiq_weight_pillow/init_image.png",
+        "init_image_note": "Not vendored; retrieve from the released checkpoint folder.",
+        "checkpoint": "s3://dynatokens/dynatokens_checkpoints/physicsiq_weight_pillow/diffusion_pytorch_model.safetensors",
+        "checkpoint_note": "not vendored, ~962 MB",
+        "trajectories": [
+          {
+            "name": "a_d",
+            "pose_json": "metrics/eval_poses/physicsiq_weight_pillow/a_d/pose.json",
+            "sha256": "d032703c553ad84fbb72f7d577d7aa5e1119c6be5ae571f624f4f71a02804f9a",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_weight_pillow/sample_poses/a_d/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "a_s",
+            "pose_json": "metrics/eval_poses/physicsiq_weight_pillow/a_s/pose.json",
+            "sha256": "b0c0ab9e2c537c93b2d432ba1eef7af813bd111b7830d7cab60a27941a5105c2",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_weight_pillow/sample_poses/a_s/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "a_w",
+            "pose_json": "metrics/eval_poses/physicsiq_weight_pillow/a_w/pose.json",
+            "sha256": "daeb3f0d17c014776ebb977d6c6c9719100173bdcf8a576361ca76dd5a923c6c",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_weight_pillow/sample_poses/a_w/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "d2",
+            "pose_json": "metrics/eval_poses/physicsiq_weight_pillow/d2/pose.json",
+            "sha256": "da40f1faadbbb4d58058055202d142e8094c5bf279b6d846638b1769735d7936",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_weight_pillow/sample_poses/d2/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "d_a",
+            "pose_json": "metrics/eval_poses/physicsiq_weight_pillow/d_a/pose.json",
+            "sha256": "0f28e240177f2862b061fba55bbf486cb2faf9796b40f790ba7a662734d4a35e",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_weight_pillow/sample_poses/d_a/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "d_w",
+            "pose_json": "metrics/eval_poses/physicsiq_weight_pillow/d_w/pose.json",
+            "sha256": "4569f460de1085be29e84da6327a1b55d26681a956612e6f1ff5237c0ea2b5eb",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_weight_pillow/sample_poses/d_w/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "s2",
+            "pose_json": "metrics/eval_poses/physicsiq_weight_pillow/s2/pose.json",
+            "sha256": "d9242d00f46bcd183799f90d94f255a35c760020c822d7d1736fd004a45aa104",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_weight_pillow/sample_poses/s2/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          },
+          {
+            "name": "up_left",
+            "pose_json": "metrics/eval_poses/physicsiq_weight_pillow/up_left/pose.json",
+            "sha256": "cd36b276027d15443513e9114ab9c368ca4b541dbf295824c3233f027b67f92e",
+            "source": "s3://dynatokens/dynatokens_checkpoints/physicsiq_weight_pillow/sample_poses/up_left/pose.json",
+            "split": "unknown",
+            "frame_count": 16
+          }
+        ],
+        "prompt_note": "The released prompt.txt is empty; obtain the prompt from the Physics-IQ benchmark entry or maintainer confirmation."
+      }
+    ]
+  },
+  "coverage": {
+    "vbench2": {
+      "paper_target": 20,
+      "verified": 6,
+      "pending": 14
+    },
+    "worldscore": {
+      "paper_target": 15,
+      "verified": 5,
+      "pending": 10
+    },
+    "note": "The other 24 scene IDs (14 VBench2 and 10 WorldScore) and all seen/unseen assignments require maintainer confirmation. The paper does not list its random subset IDs. Confirm whether the released sample poses are the trajectories used in the quantitative evaluation."
+  }
+}
